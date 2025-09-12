@@ -470,31 +470,47 @@ section .container {
 --------------------------------------------------------------*/
 .interests .icon-box {
   display: flex;
+  flex-direction: row; /* icône à gauche, texte à droite */
   align-items: center;
   padding: 20px;
   background: #09203a;
   transition: ease-in-out 0.3s;
+  flex-wrap: wrap; /* permet au texte de passer à la ligne si besoin */
 }
-
 
 .interests .icon-box i {
   font-size: 32px;
   padding-right: 10px;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .interests .icon-box h3 {
   font-weight: 700;
   margin: 0;
   padding: 0;
-  line-height: 1;
+  line-height: 1.2;
   font-size: 16px;
   color: #fff;
+  word-wrap: break-word; 
+}
+
+@media (max-width: 576px) {
+  .interests .icon-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .interests .icon-box i {
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
 }
 
 .interests .icon-box:hover {
   background: #042b56eb;
 }
+
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -726,6 +742,7 @@ section .container {
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
+
 
 .portfolio #portfolio-flters {
   padding: 0;
