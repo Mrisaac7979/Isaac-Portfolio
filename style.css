@@ -310,6 +310,13 @@ nav .nav-links a.active::after {
 #hero .hero-buttons { margin-top: 1rem; }
 #hero .hero-buttons .btn { margin: 0.5rem; }
 
+
+ .texte-justifie {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
 .social-icons-hero {
     position: absolute;
     bottom: 80px; /* Pour laisser de la place à l'indicateur de scroll */
@@ -319,6 +326,7 @@ nav .nav-links a.active::after {
     display: flex;
     gap: 20px;
 }
+
 .social-icons-hero a {
     color: var(--text-secondary-color);
     font-size: 1.5rem;
