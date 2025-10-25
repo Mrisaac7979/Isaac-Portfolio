@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formStatus = document.getElementById('form-status');
 
     // --- Textes pour l'effet de frappe ---
-    const textArray = ["Développeur.", "Passionné par l'innovation.", "Créatif et rigoureux."];
+    const textArray = ["Développeur.", "Passionné par l'innovation.", "Créatif et rigoureux.", "Diplomé en Génie Logiciel et Systèmes d'information."];
     const typingDelay = 100;
     const erasingDelay = 50;
     const newTextDelay = 2000; // Délai avant de commencer un nouveau texte
