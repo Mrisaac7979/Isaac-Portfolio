@@ -964,3 +964,15 @@ footer p:hover i { color: var(--primary-color); }
 
     #contact .contact-wrapper { padding: 1.5rem; }
 }
+
+.arrow-icon {
+  font-size: 0.85em;
+  margin-left: 6px;
+  color: #007bff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover .arrow-icon {
+  transform: translateY(-3px) translateX(3px);
+  color: #0056b3;
+}
