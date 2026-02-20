@@ -64,13 +64,19 @@ body::before{
 
 /* ── LANG BTN ── */
 #lb{
-  position:fixed;top:1.5rem;right:1.5rem;z-index:800;
-  font-family:var(--M);font-size:.55rem;letter-spacing:.2em;
+  font-family:var(--M);font-size:.6rem;letter-spacing:.2em;
   color:var(--gold);border:1px solid var(--gold-line);background:rgba(5,5,5,.9);
-  backdrop-filter:blur(20px);padding:.5rem 1rem;
-  transition:all .3s;
+  backdrop-filter:blur(20px);padding:.45rem .9rem;
+  transition:all .3s;cursor:pointer;
 }
 #lb:hover{background:var(--gold);color:#050505}
+/* Desktop : bouton fixe en haut à droite — géré via un clone */
+@media(min-width:901px){
+  #lb{
+    position:fixed;top:1.5rem;right:1.5rem;z-index:900;
+    font-size:.55rem;padding:.5rem 1rem;
+  }
+}
 
 /* ── SIDE NAV ── */
 .snav{position:fixed;right:1.6rem;top:50%;transform:translateY(-50%);z-index:700;display:flex;flex-direction:column;gap:1.8rem;align-items:flex-end}
@@ -341,9 +347,9 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 .project-type{font-family:var(--M);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
 .project-stack{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.35rem}
 .project-stack span{font-family:var(--M);font-size:.5rem;letter-spacing:.06em;text-transform:uppercase;padding:.22rem .6rem;border:1px solid var(--gold-line);color:var(--gold)}
-.project-arrow{font-size:.9rem;color:var(--gold);transform:rotate(-45deg);transition:transform .35s var(--ease)}
+.project-arrow{font-size:.9rem;color:var(--gold);transform:rotate(-45deg);transition:transform .35s var(--ease)}.project-arrow-mobile{display:none;align-self:center;padding-left:.5rem;font-size:1rem;color:var(--gold);}
 .project-item:hover .project-arrow{transform:rotate(0)}
-@media(max-width:800px){.project-item{grid-template-columns:44px 1fr}.project-side{display:none}}
+@media(max-width:800px){.project-item{grid-template-columns:44px 1fr auto}.project-side{display:none}.project-arrow-mobile{display:flex!important;}}
 
 /* ═══════════════════════════
    EDUCATION
@@ -454,13 +460,13 @@ footer{
 <div id="dot"></div>
 <div id="ring"></div>
 
-<button id="lb" aria-label="Changer de langue">EN</button>
-
 <!-- MOBILE HEADER -->
 <header class="mhdr">
-  <a href="#hero" class="mhdr-logo">Isaac Junior</a>
+  <button id="lb" aria-label="Changer de langue">EN</button>
   <button class="mhdr-btn" id="burg"><span></span><span></span><span></span></button>
 </header>
+<!-- DESKTOP LANG BTN (caché sur mobile) -->
+<button id="lb-desk" aria-label="Changer de langue" style="display:none;position:fixed;top:1.5rem;right:1.5rem;z-index:900;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(184,150,12,.25);background:rgba(5,5,5,.9);backdrop-filter:blur(20px);padding:.5rem 1rem;transition:all .3s;cursor:pointer;">EN</button>
 <div class="moverlay" id="moverlay">
   <button class="moverlay-close" id="movclose"><i class="fas fa-times"></i></button>
   <a href="#hero"           onclick="closeMenu()"><span class="fr">Accueil</span><span class="en">Home</span></a>
@@ -630,6 +636,7 @@ footer{
         <div class="project-stack"><span>PHP</span><span>HTML</span><span>CSS</span><span>JS</span></div>
         <i class="fas fa-arrow-right project-arrow"></i>
       </div>
+      <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
     <a href="https://global-majestic.com/" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">02</span>
@@ -643,6 +650,7 @@ footer{
         <div class="project-stack"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JS</span></div>
         <i class="fas fa-arrow-right project-arrow"></i>
       </div>
+      <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
     <a href="https://zlo.abztechnologies.net/fr/" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">03</span>
@@ -656,6 +664,7 @@ footer{
         <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
         <i class="fas fa-arrow-right project-arrow"></i>
       </div>
+      <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
     <a href="https://hmlasarl.com/index.html" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">04</span>
@@ -669,6 +678,7 @@ footer{
         <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
         <i class="fas fa-arrow-right project-arrow"></i>
       </div>
+      <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
     <div class="project-item">
       <span class="project-num">05</span>
@@ -857,15 +867,32 @@ footer{
     fr:{href:'cv/HOUNBO K.I.Junior CV_UPDATE.pdf', dl:'HOUNBO_Isaac_Junior_CV.pdf'},
     en:{href:'cv/ISAAC  CV FORMAT ANGLAIS.pdf', dl:'ISAAC  CV FORMAT ANGLAIS.pdf'}
   };
-  const lb = document.getElementById('lb');
-  const cvdl = document.getElementById('cvdl');
-  lb.addEventListener('click', () => {
+  const lb     = document.getElementById('lb');      // bouton dans header mobile
+  const lbDesk = document.getElementById('lb-desk'); // bouton desktop
+  const cvdl   = document.getElementById('cvdl');
+
+  // Afficher le bon bouton selon la taille d'écran
+  function syncLangBtns() {
+    if(window.innerWidth > 900) {
+      lbDesk.style.display = 'block';
+    } else {
+      lbDesk.style.display = 'none';
+    }
+  }
+  syncLangBtns();
+  window.addEventListener('resize', syncLangBtns, {passive:true});
+
+  function switchLang() {
     const n = H.getAttribute('data-lang') === 'fr' ? 'en' : 'fr';
     H.setAttribute('data-lang', n);
-    lb.textContent = n === 'fr' ? 'EN' : 'FR';
+    const label = n === 'fr' ? 'EN' : 'FR';
+    lb.textContent     = label;
+    lbDesk.textContent = label;
     cvdl.href = CV[n].href;
     cvdl.setAttribute('download', CV[n].dl);
-  });
+  }
+  lb.addEventListener('click', switchLang);
+  lbDesk.addEventListener('click', switchLang);
 
   /* ── MOBILE MENU ── */
   const mov = document.getElementById('moverlay');
