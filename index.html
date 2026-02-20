@@ -382,7 +382,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 .cert-info h4{font-family:var(--C);font-size:1rem;font-weight:400;color:var(--white);line-height:1.4;margin-bottom:.4rem}
 .cert-info p{font-size:.76rem;color:var(--muted)}
 .cert-year{font-family:var(--M);font-size:.54rem;color:var(--gold);letter-spacing:.12em;margin-top:.5rem}
-.cert-card{position:relative;}
+.cert-card{position:relative;cursor:pointer;}
 .cert-arrow{position:absolute;bottom:1.2rem;right:1.2rem;font-size:.9rem;color:var(--gold);transform:rotate(-45deg);transition:transform .35s var(--ease),opacity .35s;opacity:.5;}
 .cert-card:hover .cert-arrow{transform:rotate(0);opacity:1;}
 
@@ -511,8 +511,8 @@ footer{
 
     <p class="hero-alias">// alias E-Design &nbsp;·&nbsp; Lomé, Togo</p>
 
-    <p class="hero-desc fr">Je conçois des expériences numériques robustes et élégantes du frontend jusqu'au backend, du web jusqu'au mobile. Passionné par l'architecture logicielle et l'IA.</p>
-    <p class="hero-desc en">I craft robust, elegant digital products from frontend to backend, from web to mobile. Driven by a passion for software architecture and AI.</p>
+    <p class="hero-desc fr">Je conçois des expériences numériques robustes et élégantes — du frontend jusqu'au backend, du web jusqu'au mobile. Passionné par l'architecture logicielle et l'IA.</p>
+    <p class="hero-desc en">I craft robust, elegant digital products — from frontend to backend, from web to mobile. Driven by a passion for software architecture and AI.</p>
 
     <div class="hero-cta">
       <a id="cvdl" href="cv/HOUNBO K.I.Junior CV_UPDATE.pdf" download="HOUNBO_Isaac_Junior_CV.pdf" class="btn btn-solid">
@@ -733,6 +733,7 @@ footer{
         <p>IFIC-AUF / Certiport</p>
         <p class="cert-year">2025</p>
       </div>
+      <i class="fas fa-arrow-right cert-arrow"></i>
     </a>
     <a href="https://www.coursera.org/account/accomplishments/verify/0549UI4R2MPV" target="_blank" rel="noopener" class="cert-card">
       <img src="images/google.png" alt="Google" class="cert-logo"/>
@@ -741,6 +742,7 @@ footer{
         <p>Google</p>
         <p class="cert-year">2025</p>
       </div>
+      <i class="fas fa-arrow-right cert-arrow"></i>
     </a>
     <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=104CB68B6920A836B2FEA7081C6374A6D055C7DA51FEAB70B1938089DE4E616B" target="_blank" rel="noopener" class="cert-card">
       <img src="images/oracle2.png" alt="Oracle" class="cert-logo"/>
@@ -749,6 +751,7 @@ footer{
         <p>Oracle</p>
         <p class="cert-year">2025</p>
       </div>
+      <i class="fas fa-arrow-right cert-arrow"></i>
     </a>
     <a href="https://www.credly.com/badges/d9681bb9-940b-4546-8c68-d82178d5996f" target="_blank" rel="noopener" class="cert-card">
       <img src="images/cisco.png" alt="Cisco" class="cert-logo"/>
@@ -757,6 +760,7 @@ footer{
         <p>Cisco Networking Academy</p>
         <p class="cert-year">2022</p>
       </div>
+      <i class="fas fa-arrow-right cert-arrow"></i>
     </a>
   </div>
 </section>
@@ -782,7 +786,14 @@ footer{
     <div class="contact-info">
       <h3><span class="fr">Mes coordonnées</span><span class="en">Get in touch</span></h3>
       <div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>Lomé, Togo</span></div>
-      <div class="contact-row"><i class="fas fa-envelope"></i><a href="/cdn-cgi/l/email-protection#4f2426253a2126203d27203a212d200f28222e2623612c2022"><span class="__cf_email__" data-cfemail="167d7f7c63787f79647e796378747956717b777f7a3875797b">[email&#160;protected]</span></a></div>
+      <div class="contact-row"><i class="fas fa-envelope"></i><a id="email-link" href="#">kijuniorhounbo@gmail.com</a></div>
+<script>
+(function(){
+  var u='kijuniorhounbo';var d='gmail.com';
+  var el=document.getElementById('email-link');
+  if(el){el.href='mailto:'+u+'@'+d;el.textContent=u+'@'+d;}
+})();
+</script>
       <div class="contact-row"><i class="fas fa-phone"></i><a href="tel:+22879795822">+228 79 79 58 22</a></div>
       <div class="contact-socials">
         <a href="https://github.com/Mrisaac7979"                                  target="_blank" rel="noopener" class="social-ico"><i class="fab fa-github"></i></a>
@@ -800,7 +811,7 @@ footer{
   <a href="#hero" class="footer-top" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   const H = document.documentElement;
 
