@@ -445,6 +445,103 @@ footer{
 .loader-bar-fill{height:100%;width:0;background:var(--gold);animation:loadfill 1.2s var(--ease) .3s forwards}
 @keyframes loadfill{to{width:100%}}
 .loader-text{font-family:var(--M);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* ═══════════════════════════
+   PROJECT IMAGE PREVIEW
+═══════════════════════════ */
+.project-item{
+  display:grid;
+  grid-template-columns:55px 1fr 220px;
+  gap:2.5rem;
+}
+.project-preview{
+  position:relative;overflow:hidden;
+  width:220px;height:130px;flex-shrink:0;
+  border:1px solid var(--gold-line);
+  background:var(--bg3);
+  align-self:center;
+}
+.project-preview img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  display:block;
+  filter:grayscale(40%) brightness(.8);
+  transition:filter .5s var(--ease),transform .6s var(--ease);
+}
+.project-item:hover .project-preview img{
+  filter:grayscale(0%) brightness(1);
+  transform:scale(1.05);
+}
+.project-preview-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(184,150,12,.18) 0%,rgba(5,5,5,.65) 100%);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .4s var(--ease);
+}
+.project-item:hover .project-preview-overlay{opacity:1}
+.project-preview-icon{
+  width:34px;height:34px;border:1px solid var(--gold);
+  display:grid;place-items:center;
+  font-size:.75rem;color:var(--gold);
+  background:rgba(5,5,5,.7);
+  transform:scale(.8);transition:transform .4s var(--ease);
+}
+.project-item:hover .project-preview-icon{transform:scale(1)}
+
+.project-preview-lock{
+  position:absolute;inset:0;
+  background:rgba(5,5,5,.55);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
+}
+.project-preview-lock i{font-size:.85rem;color:rgba(184,150,12,.5)}
+.project-preview-lock span{
+  font-family:var(--M);font-size:.42rem;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(184,150,12,.4)
+}
+
+/* On adapte project-side (qui était la 3e colonne) — maintenant on le supprime du grid,
+   les infos stack/type restent dans project-body */
+.project-side{display:none}
+
+/* Les stack tags remontent dans le body */
+.project-body .project-meta{
+  display:flex;align-items:center;gap:1.2rem;margin-top:.9rem;flex-wrap:wrap;
+}
+.project-body .project-type{
+  font-family:var(--M);font-size:.48rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);
+}
+.project-body .project-stack{
+  display:flex;flex-wrap:wrap;gap:.3rem;
+}
+.project-body .project-stack span{
+  font-family:var(--M);font-size:.46rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.2rem .55rem;
+  border:1px solid var(--gold-line);color:var(--gold);
+}
+
+/* responsive */
+@media(max-width:900px){
+  .project-item{
+    grid-template-columns:36px 1fr;
+    grid-template-rows:auto auto;
+    gap:1rem 1.5rem;
+  }
+  .project-num{grid-row:1}
+  .project-body{grid-row:1;grid-column:2}
+  .project-preview{
+    display:block;
+    grid-column:1/-1;
+    grid-row:2;
+    width:100%;
+    height:180px;
+  }
+  .project-preview img{object-position:top center}
+  .project-arrow-mobile{display:none!important}
+}
+@media(max-width:480px){
+  .project-preview{height:150px}
+  .project-item{padding:1.8rem 0}
+}
 </style>
 </head>
 <body>
@@ -619,86 +716,154 @@ footer{
   <p class="section-label rv"><span class="fr">03 — Projets</span><span class="en">03 — Projects</span></p>
   <h2 class="section-title rv d1"><span class="fr">Ce que j'ai <em>construit.</em></span><span class="en">What I've <em>built.</em></span></h2>
   <div class="rv d2">
+
+    <!-- 01 — Bibliothèque Numérique -->
     <a href="https://e-biblio.great-site.net/" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">01</span>
       <div class="project-body">
         <h3><span class="fr">Bibliothèque Numérique en Ligne</span><span class="en">Online Digital Library</span></h3>
         <p class="project-desc fr">Plateforme web de bibliothèque numérique — consultation, recherche et gestion de livres. Interface responsive et UX soignée.</p>
         <p class="project-desc en">Web-based digital library — browse, search and manage books. Responsive with polished UX.</p>
+        <div class="project-meta">
+          <span class="project-type fr">Projet personnel</span><span class="project-type en">Personal project</span>
+          <div class="project-stack"><span>PHP</span><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
       </div>
-      <div class="project-side">
-        <span class="project-type fr">Projet personnel</span><span class="project-type en">Personal project</span>
-        <div class="project-stack"><span>PHP</span><span>HTML</span><span>CSS</span><span>JS</span></div>
-        <i class="fas fa-arrow-right project-arrow"></i>
+      <div class="project-preview">
+        <img src="images/projet.png" alt="Aperçu Bibliothèque Numérique"/>
+        <div class="project-preview-overlay">
+          <div class="project-preview-icon"><i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
       <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
+
+    <!-- 02 — Global Majestic Trade -->
     <a href="https://global-majestic.com/" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">02</span>
       <div class="project-body">
         <h3>Global Majestic Trade Sarl</h3>
         <p class="project-desc fr">Site web corporate pour une entreprise du secteur pétrole, mines et lubrifiants. Interface moderne et professionnelle.</p>
         <p class="project-desc en">Corporate website for an oil, mining and lubricants company. Modern, professional interface.</p>
+        <div class="project-meta">
+          <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JS</span></div>
+        </div>
       </div>
-      <div class="project-side">
-        <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
-        <div class="project-stack"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JS</span></div>
-        <i class="fas fa-arrow-right project-arrow"></i>
+      <div class="project-preview">
+        <img src="images/projetG.png" alt="Aperçu Global Majestic Trade"/>
+        <div class="project-preview-overlay">
+          <div class="project-preview-icon"><i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
       <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
+
+    <!-- 03 — ABZ Technologies -->
     <a href="https://zlo.abztechnologies.net/fr/" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">03</span>
       <div class="project-body">
         <h3>ABZ Technologies</h3>
         <p class="project-desc fr">Maintenance et optimisation du site d'une entreprise de solutions tech. Performances et stabilité améliorées.</p>
         <p class="project-desc en">Website maintenance for a tech-solutions firm. Performance and stability improvements.</p>
+        <div class="project-meta">
+          <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
       </div>
-      <div class="project-side">
-        <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
-        <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
-        <i class="fas fa-arrow-right project-arrow"></i>
+      <div class="project-preview">
+        <img src="images/projet1.png" alt="Aperçu ABZ Technologies"/>
+        <div class="project-preview-overlay">
+          <div class="project-preview-icon"><i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
       <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
+
+    <!-- 04 — HMLA Sarl -->
     <a href="https://hmlasarl.com/index.html" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">04</span>
       <div class="project-body">
         <h3>HMLA Sarl</h3>
-        <p class="project-desc fr">Maintenance du site d'une entreprise maritime et avitaillement, bugs, contenus, sécurité.</p>
-        <p class="project-desc en">Website maintenance for a maritime and ship-supply company, bugs, content, security.</p>
+        <p class="project-desc fr">Maintenance du site d'une entreprise maritime et avitaillement — bugs, contenus, sécurité.</p>
+        <p class="project-desc en">Website maintenance for a maritime and ship-supply company — bugs, content, security.</p>
+        <div class="project-meta">
+          <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
       </div>
-      <div class="project-side">
-        <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
-        <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
-        <i class="fas fa-arrow-right project-arrow"></i>
+      <div class="project-preview">
+        <img src="images/projet2.png" alt="Aperçu HMLA Sarl"/>
+        <div class="project-preview-overlay">
+          <div class="project-preview-icon"><i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
       <i class="fas fa-arrow-right project-arrow-mobile"></i>
     </a>
-    <div class="project-item">
+
+    <!-- 05 — Portfolio Personnel -->
+    <a href="https://mrisaac7979.github.io/Isaac-Portfolio/" target="_blank" rel="noopener" class="project-item">
       <span class="project-num">05</span>
       <div class="project-body">
-        <h3><span class="fr">Gestion des Marchés Publics</span><span class="en">Public Procurement System</span></h3>
-        <p class="project-desc fr">Logiciel de gestion des appels d'offres pour une administration locale, suivi, évaluation, attribution et traçabilité.</p>
-        <p class="project-desc en">Public procurement software for a local government, tracking, evaluation, awarding, full traceability.</p>
+        <h3><span class="fr">Portfolio Personnel</span><span class="en">Personal Portfolio</span></h3>
+        <p class="project-desc fr">Portfolio réactif et visuellement attrayant — animations fluides, chargement optimisé, expérience utilisateur soignée.</p>
+        <p class="project-desc en">Responsive and visually polished portfolio — smooth animations, optimised loading, refined UX.</p>
+        <div class="project-meta">
+          <span class="project-type fr">Projet personnel</span><span class="project-type en">Personal project</span>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
       </div>
-      <div class="project-side">
-        <span class="project-type fr">Administration</span><span class="project-type en">Government</span>
-        <div class="project-stack"><span>Laravel</span><span>Node.js</span><span>MySQL</span></div>
+      <div class="project-preview">
+        <img src="images/Portfolio.png" alt="Aperçu Portfolio Personnel"/>
+        <div class="project-preview-overlay">
+          <div class="project-preview-icon"><i class="fas fa-arrow-right"></i></div>
+        </div>
       </div>
-    </div>
+      <i class="fas fa-arrow-right project-arrow-mobile"></i>
+    </a>
+
+    <!-- 06 — Gestion des Marchés Publics -->
     <div class="project-item">
       <span class="project-num">06</span>
+      <div class="project-body">
+        <h3><span class="fr">Gestion des Marchés Publics</span><span class="en">Public Procurement System</span></h3>
+        <p class="project-desc fr">Logiciel de gestion des appels d'offres pour une administration locale — suivi, évaluation, attribution et traçabilité.</p>
+        <p class="project-desc en">Public procurement software for a local government — tracking, evaluation, awarding, full traceability.</p>
+        <div class="project-meta">
+          <span class="project-type fr">Administration</span><span class="project-type en">Government</span>
+          <div class="project-stack"><span>Laravel</span><span>Node.js</span><span>MySQL</span></div>
+        </div>
+      </div>
+      <div class="project-preview">
+        <img src="images/projet3.png" alt="Aperçu Gestion Marchés Publics"/>
+        <div class="project-preview-lock">
+          <i class="fas fa-lock"></i>
+          <span class="fr">Accès privé</span><span class="en">Private</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 — Application Mobile de Chants -->
+    <div class="project-item">
+      <span class="project-num">07</span>
       <div class="project-body">
         <h3><span class="fr">Application Mobile de Chants</span><span class="en">Song Book Mobile App</span></h3>
         <p class="project-desc fr">App mobile pour consulter et organiser des chants religieux — hors-ligne, interface intuitive.</p>
         <p class="project-desc en">Mobile app to browse and organize religious songs — offline-capable, intuitive interface.</p>
+        <div class="project-meta">
+          <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
+          <div class="project-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+        </div>
       </div>
-      <div class="project-side">
-        <span class="project-type fr">Client entreprise</span><span class="project-type en">Business client</span>
-        <div class="project-stack"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+      <div class="project-preview">
+        <img src="images/projet4.png" alt="Aperçu App Mobile Chants"/>
+        <div class="project-preview-lock">
+          <i class="fab fa-google-play"></i>
+          <span class="fr">Bientôt</span><span class="en">Coming soon</span>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
