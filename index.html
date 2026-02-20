@@ -23,6 +23,14 @@ img{display:block;max-width:100%}
 /* ── CANVAS ── */
 #particles{position:absolute;inset:0;pointer-events:none;opacity:.5;z-index:1}
 
+/* ── GLOBAL STARFIELD ── */
+#starfield{
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:2;
+  opacity:1;
+}
+
 /* ── LANG ── */
 [data-lang="en"] .fr{display:none!important}
 [data-lang="fr"] .en{display:none!important}
@@ -59,7 +67,7 @@ img{display:block;max-width:100%}
 body::before{
   content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:1;
+  pointer-events:none;z-index:5;
 }
 
 /* ── LANG BTN ── */
@@ -101,7 +109,7 @@ body::before{
 @media(max-width:900px){.mhdr{display:flex}}
 
 /* ── SECTIONS ── */
-section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem;display:flex;flex-direction:column;justify-content:center}
+section{position:relative;z-index:3;min-height:100vh;padding:8rem 5rem 7rem 8rem;display:flex;flex-direction:column;justify-content:center}
 @media(max-width:900px){section{padding:6rem 1.5rem 4rem}}
 @media(max-width:600px){section{padding:5rem 1.2rem 3rem}}
 
@@ -127,7 +135,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
    HERO
 ═══════════════════════════ */
 #hero{
-  background:var(--bg);
+  background:rgba(5,5,5,0.0);
   padding:0 5rem 0 8rem;
   overflow:hidden;
   position:relative;
@@ -170,7 +178,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 @media(max-width:900px){.hero-vline{left:1rem}}
 
 /* hero inner */
-.hero-inner{position:relative;z-index:3;max-width:800px;padding-top:6rem}
+.hero-inner{position:relative;z-index:4;max-width:800px;padding-top:6rem}
 @media(max-width:900px){.hero-inner{padding-top:0}}
 
 /* available badge */
@@ -243,7 +251,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 
 /* socials bottom */
 .hero-socials{
-  position:absolute;bottom:3.5rem;left:8rem;display:flex;gap:1.2rem;z-index:3;
+  position:absolute;bottom:3.5rem;left:8rem;display:flex;gap:1.2rem;z-index:5;
   opacity:0;animation:fadein .8s var(--ease) 1.5s forwards;
 }
 @media(max-width:900px){.hero-socials{left:1.5rem;bottom:2rem}}
@@ -252,7 +260,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 
 /* scroll indicator */
 .hero-scroll{
-  position:absolute;bottom:3.5rem;right:5rem;z-index:3;
+  position:absolute;bottom:3.5rem;right:5rem;z-index:5;
   font-family:var(--M);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
   display:flex;flex-direction:column;align-items:center;gap:.6rem;
   opacity:0;animation:fadein .8s var(--ease) 1.6s forwards;
@@ -264,7 +272,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 /* ═══════════════════════════
    ABOUT
 ═══════════════════════════ */
-#about{background:var(--bg2)}
+#about{background:rgba(11,11,11,0.82)}
 .about-grid{display:grid;grid-template-columns:300px 1fr;gap:7rem;align-items:center}
 @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem}}
 
@@ -295,7 +303,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 /* ═══════════════════════════
    SKILLS
 ═══════════════════════════ */
-#skills{background:var(--bg3)}
+#skills{background:rgba(16,16,16,0.82)}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-bottom:3rem}
 @media(max-width:800px){.skills-grid{grid-template-columns:1fr;gap:3rem}}
 
@@ -323,7 +331,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 /* ═══════════════════════════
    PROJECTS
 ═══════════════════════════ */
-#projects{background:var(--bg2)}
+#projects{background:rgba(11,11,11,0.82)}
 .project-item{
   display:grid;grid-template-columns:55px 1fr 180px;gap:2.5rem;
   align-items:start;padding:2.5rem 0;
@@ -354,7 +362,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 /* ═══════════════════════════
    EDUCATION
 ═══════════════════════════ */
-#education{background:var(--bg3)}
+#education{background:rgba(16,16,16,0.82)}
 .timeline{position:relative;padding-left:2.5rem}
 .timeline::before{content:'';position:absolute;left:0;top:.6rem;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(184,150,12,.1))}
 .timeline-item{position:relative;padding-bottom:3rem}
@@ -371,7 +379,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 /* ═══════════════════════════
    CERTIFICATIONS
 ═══════════════════════════ */
-#certifications{background:var(--bg2)}
+#certifications{background:rgba(11,11,11,0.82)}
 .certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
 @media(max-width:700px){.certs-grid{grid-template-columns:1fr}}
 .cert-card{
@@ -395,7 +403,7 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 /* ═══════════════════════════
    CONTACT
 ═══════════════════════════ */
-#contact{background:var(--bg3)}
+#contact{background:rgba(16,16,16,0.82)}
 .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:6rem;align-items:start}
 @media(max-width:800px){.contact-grid{grid-template-columns:1fr;gap:3rem}}
 .contact-form{display:flex;flex-direction:column;gap:2rem}
@@ -423,9 +431,9 @@ section{position:relative;z-index:2;min-height:100vh;padding:8rem 5rem 7rem 8rem
 
 /* ── FOOTER ── */
 footer{
-  background:var(--bg);border-top:1px solid var(--gold-line);
+  background:rgba(5,5,5,0.85);border-top:1px solid var(--gold-line);
   padding:2rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-  position:relative;z-index:2;
+  position:relative;z-index:3;
 }
 @media(max-width:900px){footer{padding:1.8rem}}
 .footer-name{font-family:var(--C);font-size:1.1rem;font-style:italic;color:var(--gold)}
@@ -547,6 +555,7 @@ footer{
 <body>
 
 <!-- LOADING SCREEN -->
+<canvas id="starfield" aria-hidden="true"></canvas>
 <div id="loader">
   <div class="loader-name">Isaac Portfolio Loading</div>
   <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
@@ -1108,7 +1117,7 @@ footer{
   }, {threshold:0.5});
   document.querySelectorAll('.hero-stats').forEach(el => counterObs.observe(el));
 
-  /* ── PARTICLES ── */
+  /* ── HERO PARTICLES (existing) ── */
   (function(){
     const canvas = document.getElementById('particles');
     if(!canvas) return;
@@ -1133,7 +1142,6 @@ footer{
     }
     function draw(){
       ctx.clearRect(0,0,W,H);
-      // connections
       for(let i=0;i<particles.length;i++){
         for(let j=i+1;j<particles.length;j++){
           const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
@@ -1148,7 +1156,6 @@ footer{
           }
         }
       }
-      // dots
       particles.forEach(p => {
         ctx.beginPath();
         ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
@@ -1162,20 +1169,244 @@ footer{
     }
     resize(); init(); draw();
     window.addEventListener('resize', ()=>{resize();init()}, {passive:true});
-
-    // mouse interaction
     let mx=W/2, my=H/2;
     canvas.addEventListener('mousemove', e => {
       const r = canvas.getBoundingClientRect();
       mx=e.clientX-r.left; my=e.clientY-r.top;
       particles.forEach(p => {
         const dx=p.x-mx, dy=p.y-my, d=Math.sqrt(dx*dx+dy*dy);
-        if(d<100){
-          p.vx += dx/d*.05;
-          p.vy += dy/d*.05;
-        }
+        if(d<100){ p.vx += dx/d*.05; p.vy += dy/d*.05; }
       });
     });
+  })();
+
+  /* ══════════════════════════════════════════
+     GLOBAL STARFIELD — étoiles dorées sur toute la page
+  ══════════════════════════════════════════ */
+  (function(){
+    const canvas = document.getElementById('starfield');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [], shooters = [], mouseX = 0, mouseY = 0;
+    const GOLD = [184, 150, 12];
+    const GOLD2 = [212, 173, 46];
+    const GOLD3 = [232, 200, 74];
+
+    function resize(){
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function randBetween(a, b){ return a + Math.random() * (b - a); }
+
+    function initStars(){
+      stars = [];
+      // Étoiles statiques scintillantes
+      const count = Math.min(Math.floor(W * H / 4000), 220);
+      for(let i = 0; i < count; i++){
+        const size = Math.random();
+        let type;
+        if(size < 0.6) type = 'tiny';       // minuscule
+        else if(size < 0.88) type = 'small'; // petite
+        else if(size < 0.97) type = 'med';  // moyenne
+        else type = 'big';                   // grande + halo
+
+        const baseAlpha = type === 'tiny'  ? randBetween(.05, .2)
+                        : type === 'small' ? randBetween(.15, .4)
+                        : type === 'med'   ? randBetween(.3, .65)
+                        :                    randBetween(.5, .9);
+
+        stars.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: type === 'tiny'  ? randBetween(.3, .7)
+           : type === 'small' ? randBetween(.6, 1.1)
+           : type === 'med'   ? randBetween(1.1, 1.8)
+           :                    randBetween(1.8, 2.8),
+          type,
+          // scintillement
+          alpha:     baseAlpha,
+          baseAlpha: baseAlpha,
+          twinkleSpeed: randBetween(.004, .018),
+          twinklePhase: Math.random() * Math.PI * 2,
+          twinkleAmp:   randBetween(.03, .18),
+          // dérive lente
+          vx: (Math.random() - .5) * .06,
+          vy: (Math.random() - .5) * .04 - .015, // légère montée
+          // couleur : majoritairement gold, quelques blanc-doré
+          colorIdx: Math.random() < .7 ? 0 : Math.random() < .5 ? 1 : 2,
+          // pour les "big" : petites branches en croix
+          cross: type === 'big' && Math.random() < .6,
+        });
+      }
+      shooters = [];
+    }
+
+    function spawnShooter(){
+      // étoile filante
+      const angle = randBetween(.12, .35); // angle vers bas-droite
+      shooters.push({
+        x:  Math.random() * W * .8,
+        y:  Math.random() * H * .4,
+        vx: Math.cos(angle) * randBetween(6, 14),
+        vy: Math.sin(angle) * randBetween(3, 8),
+        len: randBetween(80, 200),
+        alpha: 1,
+        life:  1,
+      });
+    }
+
+    let lastShoot = 0;
+    function maybeShoot(ts){
+      if(ts - lastShoot > randBetween(2800, 6000)){
+        spawnShooter();
+        lastShoot = ts;
+      }
+    }
+
+    function drawStar(s, t){
+      const colors = [GOLD, GOLD2, GOLD3];
+      const [r,g,b] = colors[s.colorIdx];
+
+      // scintillement
+      const twinkle = Math.sin(t * s.twinkleSpeed * 60 + s.twinklePhase) * s.twinkleAmp;
+      const a = Math.max(0, Math.min(1, s.alpha + twinkle));
+
+      ctx.save();
+      ctx.translate(s.x, s.y);
+
+      if(s.type === 'big'){
+        // halo externe
+        const grd = ctx.createRadialGradient(0, 0, 0, 0, 0, s.r * 5);
+        grd.addColorStop(0,   `rgba(${r},${g},${b},${a * .35})`);
+        grd.addColorStop(.4,  `rgba(${r},${g},${b},${a * .12})`);
+        grd.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+        ctx.beginPath();
+        ctx.arc(0, 0, s.r * 5, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+      }
+
+      if(s.type === 'med' || s.type === 'big'){
+        // petit halo interne
+        const grd2 = ctx.createRadialGradient(0, 0, 0, 0, 0, s.r * 2.5);
+        grd2.addColorStop(0, `rgba(${r},${g},${b},${a * .5})`);
+        grd2.addColorStop(1, `rgba(${r},${g},${b},0)`);
+        ctx.beginPath();
+        ctx.arc(0, 0, s.r * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = grd2;
+        ctx.fill();
+      }
+
+      // point central
+      ctx.beginPath();
+      ctx.arc(0, 0, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
+      ctx.fill();
+
+      // croix lumineuse pour les grandes étoiles
+      if(s.cross){
+        const len = s.r * 5;
+        ctx.globalAlpha = a * .4;
+        ctx.strokeStyle = `rgba(${r},${g},${b},1)`;
+        ctx.lineWidth = .5;
+        // horizontale
+        ctx.beginPath();
+        ctx.moveTo(-len, 0); ctx.lineTo(len, 0);
+        ctx.stroke();
+        // verticale
+        ctx.beginPath();
+        ctx.moveTo(0, -len * 1.4); ctx.lineTo(0, len * 1.4);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+
+      ctx.restore();
+    }
+
+    function drawShooter(s){
+      if(s.alpha <= 0) return;
+      const tailX = s.x - s.vx / Math.hypot(s.vx, s.vy) * s.len * s.life;
+      const tailY = s.y - s.vy / Math.hypot(s.vx, s.vy) * s.len * s.life;
+      const grd = ctx.createLinearGradient(tailX, tailY, s.x, s.y);
+      grd.addColorStop(0, `rgba(184,150,12,0)`);
+      grd.addColorStop(.6, `rgba(212,173,46,${s.alpha * .5})`);
+      grd.addColorStop(1, `rgba(232,200,74,${s.alpha})`);
+      ctx.beginPath();
+      ctx.moveTo(tailX, tailY);
+      ctx.lineTo(s.x, s.y);
+      ctx.strokeStyle = grd;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      // tête brillante
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(232,200,74,${s.alpha})`;
+      ctx.fill();
+    }
+
+    // réaction souris : les étoiles proches s'écartent doucement
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX; mouseY = e.clientY;
+    }, {passive: true});
+
+    let t = 0;
+    function draw(ts){
+      ctx.clearRect(0, 0, W, H);
+
+      maybeShoot(ts);
+
+      const scrollY = window.scrollY;
+
+      stars.forEach(s => {
+        // dérive
+        s.x += s.vx;
+        s.y += s.vy;
+        // wrap autour de l'écran
+        if(s.x < -5)  s.x = W + 5;
+        if(s.x > W+5) s.x = -5;
+        if(s.y < -5)  s.y = H + 5;
+        if(s.y > H+5) s.y = -5;
+
+        // parallaxe légère selon scroll
+        const parallaxY = (scrollY * .015 * (s.r / 2.5)) % H;
+
+        // réaction souris douce
+        const dx = s.x - mouseX, dy = (s.y + parallaxY % H) - mouseY;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 120 && dist > 0){
+          const force = (1 - dist/120) * .4;
+          s.x += (dx/dist) * force;
+          s.y += (dy/dist) * force;
+        }
+
+        const drawY = ((s.y - parallaxY % H) + H) % H;
+        const saved = s.y;
+        s.y = drawY;
+        drawStar(s, t);
+        s.y = saved;
+      });
+
+      // étoiles filantes
+      for(let i = shooters.length - 1; i >= 0; i--){
+        const s = shooters[i];
+        s.x += s.vx;
+        s.y += s.vy;
+        s.life -= .018;
+        s.alpha = Math.max(0, s.life);
+        drawShooter(s);
+        if(s.life <= 0) shooters.splice(i, 1);
+      }
+
+      t++;
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    initStars();
+    requestAnimationFrame(draw);
+
+    window.addEventListener('resize', ()=>{ resize(); initStars(); }, {passive:true});
   })();
 
   /* ── CERT TILT ── */
