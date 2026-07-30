@@ -365,18 +365,19 @@ button { cursor: none; }
 
 .hero-name {
   font-family: var(--serif);
-  font-size: clamp(3.2rem, 8vw, 7.5rem);
-  font-weight: 700;
-  line-height: 0.93;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.6rem;
+  font-size: clamp(2.3rem, 3.6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 0.9rem;
 }
 .hero-name .hero-name-line2 {
   display: block;
   font-weight: 400;
-  font-style: italic;
   color: var(--gold2);
-  font-size: 0.88em;
+  font-size: 0.82em;
+  margin-top: 0.15em;
 }
 
 .hero-alias {
@@ -945,7 +946,7 @@ footer {
   .lang-btn { top: 1rem; right: 4.5rem; }
 }
 @media (max-width: 600px) {
-  .hero-name { font-size: 3rem; }
+  .hero-name { font-size: 2.1rem; }
   .hero-stats { gap: 2rem; }
   .hero-cta { flex-direction: column; }
   .btn { justify-content: center; }
