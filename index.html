@@ -2,9 +2,9 @@
 <html lang="fr" data-lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Isaac Hounbo | Développeur fullstack, Lomé, Togo</title>
-<meta name="description" content="HOUNBO Komi Isaac Junior, développeur logiciel fullstack web et mobile, basé à Lomé, Togo.">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<title>HOUNBO Komi Isaac Junior | Développeur fullstack, Lomé, Togo</title>
+<meta name="description" content="HOUNBO Komi Isaac Junior, développeur fullstack web et mobile à Lomé, Togo. Next.js, React, Node.js, Laravel, Flutter.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23088CFC'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='white'%3EIH%3C/text%3E%3C/svg%3E">
 <script>try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +15,8 @@
 [data-theme=dark]{--bg:#0A1526;--fg:#F2F6FC;--ink:#C9D5E6;--mute:#8FA3BF;--line:#1E3050;--soft:#0F1D33;--blue:#5AB0FF;--hd:rgba(10,21,38,.9);--seg:#2A3F63;--tag:rgba(90,176,255,.16);--deep:#050C18;--btn:#fff;--btn-fg:#0A1526;--btn-hv:#5AB0FF;--btn-hvfg:#0A1526;color-scheme:dark}
 .tx,.tx *{transition:background-color .35s,color .35s,border-color .35s!important}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{font:400 1.0625rem/1.6 'Archivo',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
+body{overflow-x:clip;font:400 1.0625rem/1.6 'Archivo',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}ul{list-style:none}img{display:block;max-width:100%}
 h1,h2,h3{font-stretch:118%;color:var(--fg);letter-spacing:-.02em;line-height:1.05}
 [data-lang=en] .fr,[data-lang=fr] .en{display:none!important}
@@ -24,7 +24,7 @@ h1,h2,h3{font-stretch:118%;color:var(--fg);letter-spacing:-.02em;line-height:1.0
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 /* header */
 header{position:sticky;top:0;z-index:50;background:var(--hd);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.hd{max-width:var(--w);margin:0 auto;padding:0 var(--pad);height:68px;display:flex;align-items:center;gap:28px}
+.hd{max-width:var(--w);margin:0 auto;padding:0 max(var(--pad),env(safe-area-inset-right)) 0 max(var(--pad),env(safe-area-inset-left));height:68px;display:flex;align-items:center;gap:28px}
 .tg{position:relative;width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;background:var(--soft);color:var(--fg);font-size:19px;flex:none;transition:border-color .2s,background-color .2s}
 .tg:hover{border-color:var(--blue)}.tg .i{grid-area:1/1;transition:transform .45s cubic-bezier(.22,1,.36,1),opacity .3s}
 .tg .sun{opacity:0;transform:rotate(-90deg) scale(.5)}[data-theme=dark] .tg .sun{opacity:1;transform:none}[data-theme=dark] .tg .moon{opacity:0;transform:rotate(90deg) scale(.5)}
@@ -48,7 +48,9 @@ nav.pri{display:flex;gap:26px;margin-left:auto}
 .ht{padding:clamp(48px,8vw,104px) clamp(24px,5vw,72px) 40px max(var(--pad),calc((100vw - var(--w))/2 + var(--pad)));display:flex;flex-direction:column;justify-content:center}
 .av{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:500;color:var(--mute);margin-bottom:28px}
 .av::before{content:"";width:8px;height:8px;border-radius:50%;background:#1DA463}
-h1{font-size:clamp(3.2rem,8.2vw,7rem);font-weight:800;line-height:.94;margin-bottom:28px}
+h1{margin-bottom:28px;overflow-wrap:anywhere}
+.sn{display:block;font-size:clamp(2.7rem,12.5vw,6.2rem);font-weight:800;line-height:.92;letter-spacing:-.025em}
+.gn{display:block;font-size:clamp(1.25rem,5.2vw,1.9rem);font-weight:700;line-height:1.1;margin-top:.5em}
 .role{font-size:clamp(1.2rem,2vw,1.65rem);font-weight:600;color:var(--fg);margin-bottom:14px}
 .ht p.d{color:var(--mute);max-width:50ch}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 56px}
@@ -56,28 +58,20 @@ h1{font-size:clamp(3.2rem,8.2vw,7rem);font-weight:800;line-height:.94;margin-bot
 .facts dt{font-size:.8rem;color:var(--mute)}.facts dd{font-weight:600;color:var(--fg);font-size:.95rem}
 .art{background:var(--cobalt);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .art img{width:min(100%,720px);height:auto}
+@media(min-width:901px){.sn{font-size:clamp(3.6rem,7.4vw,7rem)}.gn{font-size:clamp(1.6rem,3vw,2.7rem)}}
 @keyframes up{from{opacity:0;transform:translateY(24px)}}
 .ht>*{animation:up .9s cubic-bezier(.22,1,.36,1) backwards;animation-delay:calc(var(--d,0)*80ms)}
 .art img{animation:up 1.1s .25s cubic-bezier(.22,1,.36,1) backwards}
 /* sections */
 section{padding:clamp(72px,9vw,120px) 0}.alt{background:var(--soft)}
 .sec{max-width:var(--w);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(28px,5vw,80px)}
+.sec>*{min-width:0}
 .sec>h2{font-size:clamp(2rem,3.4vw,3rem);font-weight:700;align-self:start;position:sticky;top:104px}
 .lead{font-size:clamp(1.35rem,2.2vw,1.9rem);line-height:1.38;font-weight:500;color:var(--fg);margin-bottom:28px;letter-spacing:-.01em}
 .ab p:not(.lead){color:var(--mute);max-width:62ch;margin-bottom:16px}.ab strong{color:var(--fg);font-weight:600}
 .figs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;border-top:1px solid var(--line);padding-top:28px}
 .figs b{display:block;font-size:2.6rem;font-weight:700;font-stretch:118%;color:var(--fg);line-height:1;margin-bottom:8px}.figs span{color:var(--mute);font-size:.9rem}
 /* skills */
-.sg{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.sg h3,.tools h3{font-size:1.05rem;font-stretch:112%;margin-bottom:12px}
-.sk li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 0;border-top:1px solid var(--line)}
-.sk li:last-child{border-bottom:1px solid var(--line)}
-.lv{display:flex;align-items:center;gap:4px;font-size:.8rem;color:var(--mute);white-space:nowrap}
-.lv i{width:16px;height:5px;background:var(--seg)}.lv::after{margin-left:8px;min-width:92px}
-.lv[data-l="3"] i,.lv[data-l="2"] i:nth-child(-n+2),.lv[data-l="1"] i:first-child{background:var(--blue)}
-[data-lang=fr] [data-l="3"]::after{content:"Maîtrise"}[data-lang=fr] [data-l="2"]::after{content:"Solide"}[data-lang=fr] [data-l="1"]::after{content:"En progression"}
-[data-lang=en] [data-l="3"]::after{content:"Advanced"}[data-lang=en] [data-l="2"]::after{content:"Proficient"}[data-lang=en] [data-l="1"]::after{content:"Developing"}
-.tools{margin-top:56px}.tl{columns:2;column-gap:48px}.tl li{break-inside:avoid;padding:12px 0;border-top:1px solid var(--line)}
 /* projects */
 .pj{border-top:1px solid var(--line)}.pj:last-child{border-bottom:1px solid var(--line)}
 .ph{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) 20px;gap:8px 24px;align-items:center;width:100%;text-align:left;padding:24px 0}
@@ -88,12 +82,19 @@ section{padding:clamp(72px,9vw,120px) 0}.alt{background:var(--soft)}
 .pb{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1),visibility 0s .45s}
 .open .pb{grid-template-rows:1fr;visibility:visible;transition-delay:0s}
 .pbi{overflow:hidden;min-height:0}
-.pbc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;padding:4px 0 36px}.pbc.no{grid-template-columns:1fr}
+.pbc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start;padding:4px 0 36px}.pbc.no{grid-template-columns:1fr}
 .fig{position:relative;aspect-ratio:16/10;background:var(--soft);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--mute);font-size:.9rem}
 .fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
 .fig em{position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:6px;font-style:normal;font-size:.8rem;font-weight:600;background:#fff;color:var(--navy);padding:6px 10px;border-radius:3px}
 .pbc p{color:var(--mute);margin-bottom:24px;max-width:58ch}
 .lk{display:inline-flex;gap:8px;align-items:center;font-weight:600;color:var(--blue);border-bottom:1.5px solid currentColor}
+.sr{display:grid;grid-template-columns:200px minmax(0,1fr);gap:6px 24px;padding:18px 0;border-top:1px solid var(--line)}.sr:last-child{border-bottom:1px solid var(--line)}
+.sr h3{font-size:1rem;font-stretch:108%;line-height:1.3}.sr p{color:var(--ink)}
+.xp{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;padding:32px 0;border-top:1px solid var(--line)}.xp:last-child{border-bottom:1px solid var(--line)}
+.xp time{display:block;font-weight:700;color:var(--fg)}.xp small{display:block;color:var(--mute);font-size:.85rem;margin-top:4px}
+.xp h3{font-size:1.25rem;font-stretch:110%;margin-bottom:4px}.xp .co{color:var(--blue);font-weight:600;margin-bottom:14px}
+.xp ul{display:grid;gap:10px}.xp li{position:relative;padding-left:20px;color:var(--ink)}.xp li::before{content:"";position:absolute;left:0;top:.78em;width:8px;height:2px;background:var(--blue)}
+.fig.w{aspect-ratio:auto;display:block}.fig.w img{position:static;height:auto}
 /* education / certs */
 .ed{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line)}.ed:last-child{border-bottom:1px solid var(--line)}
 .ed time{font-weight:700;color:var(--fg)}.ed h3{font-size:1.2rem;font-stretch:108%;margin-bottom:6px}.ed p{color:var(--mute)}
@@ -117,15 +118,18 @@ input:focus,textarea:focus{outline:2px solid var(--cobalt);border-color:var(--co
 footer{background:var(--deep);color:#8FA3BF;font-size:.85rem}
 .fi{max-width:var(--w);margin:0 auto;padding:28px var(--pad);border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .fi a:hover{color:#fff}
+@media(max-width:1100px){nav.pri{display:none}.lang{margin-left:auto}.bg{display:flex}.hd{gap:16px}}
 @media(max-width:900px){
- nav.pri{display:none}.lang{margin-left:auto}.bg{display:flex}.hd{gap:16px}
- .hero{grid-template-columns:1fr;min-height:0}.art{order:2}.art img{width:min(100%,420px)}
+ .tg,.bg{width:44px;height:44px}.lang button{padding:10px 13px}
+ .hero{grid-template-columns:minmax(0,1fr);min-height:0}.art{order:2}.art img{width:min(100%,420px)}
  .ht{padding:48px var(--pad) 48px}
- .sec{grid-template-columns:1fr}.sec>h2{position:static}
- .sg,.cg{grid-template-columns:1fr}.pbc{grid-template-columns:1fr}
+ .sec{grid-template-columns:minmax(0,1fr)}.sec>h2{position:static}
+ .cg{grid-template-columns:minmax(0,1fr)}.pbc{grid-template-columns:1fr}
  .ph{grid-template-columns:1fr 20px}.pn{grid-column:1}.pt,.ps{grid-column:1}.ph .i{grid-column:2;grid-row:1}
 }
-@media(max-width:560px){.facts,.figs{grid-template-columns:1fr}.tl{columns:1}.ed{grid-template-columns:1fr;gap:6px}.ct{grid-template-columns:72px 1fr}.ct .vf{grid-column:2}}
+@media(max-width:560px){section{padding:64px 0}.facts,.figs{grid-template-columns:minmax(0,1fr)}.ed,.sr,.xp{grid-template-columns:minmax(0,1fr);gap:6px}.xp{padding:26px 0}.sec>h2{font-size:1.8rem}.fi{flex-direction:column}.ct{grid-template-columns:72px 1fr}.ct .vf{grid-column:2}}
+@media(max-width:480px){.cta .btn{flex:1 1 100%;justify-content:center}.ph{padding:20px 0}.big{max-width:none}}
+@media(max-width:340px){.hd{gap:10px}.lang button{padding:10px}.cta{margin-bottom:40px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -146,6 +150,7 @@ footer{background:var(--deep);color:#8FA3BF;font-size:.85rem}
   <nav class="pri" id="nav" aria-label="Navigation">
     <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
     <a href="#skills"><span class="fr">Compétences</span><span class="en">Skills</span></a>
+    <a href="#experience"><span class="fr">Expérience</span><span class="en">Experience</span></a>
     <a href="#projects"><span class="fr">Projets</span><span class="en">Projects</span></a>
     <a href="#education"><span class="fr">Formation</span><span class="en">Education</span></a>
     <a href="#certifications">Certifications</a>
@@ -159,86 +164,63 @@ footer{background:var(--deep);color:#8FA3BF;font-size:.85rem}
 <main id="top">
 <div class="hero">
   <div class="ht">
-    <h1 style="--d:1">Isaac<br>Hounbo</h1>
-    <p class="role" style="--d:2"><span class="fr">Développeur logiciel fullstack, web et mobile</span><span class="en">Fullstack software developer, web and mobile</span></p>
-    <p class="d fr" style="--d:3">Je conçois des architectures logicielles robustes et des interfaces soignées, du frontend au backend, du web au mobile.</p>
-    <p class="d en" style="--d:3">I design robust software architectures and considered interfaces, from frontend to backend, web to mobile.</p>
-    <div class="cta" style="--d:4">
+    <h1 style="--d:0"><span class="sn">HOUNBO</span><span class="gn">Komi Isaac Junior</span></h1>
+    <p class="role" style="--d:1"><span class="fr">Développeur fullstack, web et mobile</span><span class="en">Fullstack developer, web and mobile</span></p>
+    <p class="d fr" style="--d:2">Je conçois et livre des applications web et mobiles fiables, du frontend (Next.js, React) au backend (Node.js, Laravel), avec une exigence constante sur l’architecture des données, les tests et la qualité de livraison.</p>
+    <p class="d en" style="--d:2">I design and ship dependable web and mobile applications, from frontend (Next.js, React) to backend (Node.js, Laravel), with a constant focus on data architecture, testing and delivery quality.</p>
+    <div class="cta" style="--d:3">
       <a id="cv" class="btn b1" href="cv/HOUNBO%20K.I.Junior%20CV_UPDATE.pdf" download="HOUNBO_Isaac_Junior_CV.pdf"><svg class="i"><use href="#dl"/></svg><span class="fr">Télécharger le CV</span><span class="en">Download CV</span></a>
       <a class="btn b2" href="#projects"><span class="fr">Voir les projets</span><span class="en">View the projects</span></a>
     </div>
-    <dl class="facts" style="--d:5">
+    <dl class="facts" style="--d:4">
       <div><dt><span class="fr">Basé à</span><span class="en">Based in</span></dt><dd>Lomé, Togo</dd></div>
-      <div><dt><span class="fr">Formation</span><span class="en">Education</span></dt><dd><span class="fr">Licence en génie logiciel</span><span class="en">Bachelor’s, software engineering</span></dd></div>
-      <div><dt><span class="fr">En ce moment</span><span class="en">Currently</span></dt><dd><span class="fr">Programme DCLIC, OIF</span><span class="en">DCLIC programme, OIF</span></dd></div>
+      <div><dt><span class="fr">Actuellement</span><span class="en">Currently</span></dt><dd><span class="fr">Développeur fullstack, HEBAT SARLU</span><span class="en">Fullstack developer, HEBAT SARLU</span></dd></div>
+      <div><dt><span class="fr">Formation</span><span class="en">Education</span></dt><dd><span class="fr">Licence en génie logiciel, IAI-Togo</span><span class="en">Software engineering degree, IAI-Togo</span></dd></div>
     </dl>
   </div>
-  <div class="art"><img src="images/isaac.webp" alt="Portrait de Isaac Hounbo" width="1285" height="1224"></div>
+  <div class="art"><img src="images/isaac.webp" alt="Portrait de HOUNBO Komi Isaac Junior" width="1285" height="1224"></div>
 </div>
 
 <section id="about"><div class="sec">
   <h2><span class="fr">À propos</span><span class="en">About</span></h2>
   <div class="ab">
-    <p class="lead fr">Mon cœur de métier : concevoir des architectures robustes, des interfaces fluides et des systèmes performants, du développement web fullstack aux applications mobiles cross-platform.</p>
-    <p class="lead en">My core expertise: robust architectures, fluid interfaces and high-performance systems, from fullstack web to cross-platform mobile applications.</p>
-    <p class="fr">Je suis <strong>HOUNBO Komi Isaac Junior</strong>, développeur logiciel diplômé de l’Institut Africain d’Informatique de Lomé, avec une Licence en Génie Logiciel et Systèmes d’Information.</p>
-    <p class="en">I am <strong>HOUNBO Komi Isaac Junior</strong>, a software developer with a Bachelor’s in Software Engineering and Information Systems from the Institut Africain d’Informatique, Lomé.</p>
-    <p class="fr">Actuellement inscrit au programme <strong>DCLIC de l’Organisation Internationale de la Francophonie</strong>, je continue d’approfondir mes compétences en développement web et mobile.</p>
-    <p class="en">Currently enrolled in the <strong>DCLIC programme of the Organisation Internationale de la Francophonie</strong>, I keep deepening my web and mobile development skills.</p>
+    <p class="lead fr">Je transforme des besoins métier complexes en logiciels fiables, de la modélisation des données à l’interface, en passant par l’API et les tests.</p>
+    <p class="lead en">I turn complex business needs into dependable software, from data modelling to the interface, through the API and testing.</p>
+    <p class="fr">Développeur fullstack diplômé en Génie Logiciel et Systèmes d’Information (IAI-Togo), j’ai conçu des applications web et mobiles pour des entreprises, des administrations et des fintechs en Afrique de l’Ouest : gestion de station-service, passation de marchés publics, plateforme d’échange de cryptomonnaies et de transfert d’argent.</p>
+    <p class="en">A fullstack developer with a degree in Software Engineering and Information Systems (IAI-Togo), I have built web and mobile applications for companies, public administrations and fintechs in West Africa: fuel-station management, public procurement, a crypto exchange and money-transfer platform.</p>
+    <p class="fr">J’accorde autant d’importance à ce qui ne se voit pas qu’à l’interface : intégration d’API et de services tiers, schémas de bases de données, tests <strong>fonctionnels, d’intégration et de régression</strong>, validation avant mise en production. Rigoureux et autodidacte, je travaille avec un fort esprit d’analyse et une approche orientée solutions.</p>
+    <p class="en">I care as much about what users never see as about the interface: API and third-party integrations, database schemas, <strong>functional, integration and regression testing</strong>, validation before release. Rigorous and self-taught, I work with a strong analytical mind and a solutions-first approach.</p>
+    <p class="fr">Certifié en <strong>intelligence artificielle et cloud</strong> (Oracle), formé par l’Organisation Internationale de la Francophonie au développement web et mobile (programme D-CLIC).</p>
+    <p class="en">Certified in <strong>artificial intelligence and cloud</strong> (Oracle), trained in web and mobile development by the Organisation Internationale de la Francophonie (D-CLIC programme).</p>
     <div class="figs">
-      <div><b>3+</b><span class="fr">Ans d’expérience</span><span class="en">Years of experience</span></div>
-      <div><b>9+</b><span class="fr">Projets livrés</span><span class="en">Projects delivered</span></div>
-      <div><b>10+</b><span class="fr">Technologies</span><span class="en">Technologies</span></div>
+      <div><b>2+</b><span class="fr">Années d’expérience</span><span class="en">Years of experience</span></div>
+      <div><b>10+</b><span class="fr">Projets réalisés</span><span class="en">Projects built</span></div>
+      <div><b>15+</b><span class="fr">Technologies maîtrisées</span><span class="en">Technologies used</span></div>
     </div>
   </div>
 </div></section>
 
 <section id="skills" class="alt"><div class="sec">
   <h2><span class="fr">Compétences</span><span class="en">Skills</span></h2>
-  <div>
-    <div class="sg">
-      <div><h3>Frontend &amp; Mobile</h3><ul class="sk">
-        <li>HTML / CSS<span class="lv" data-l="3"><i></i><i></i><i></i></span></li>
-        <li>Bootstrap<span class="lv" data-l="3"><i></i><i></i><i></i></span></li>
-        <li>JavaScript<span class="lv" data-l="2"><i></i><i></i><i></i></span></li>
-        <li>React.js<span class="lv" data-l="1"><i></i><i></i><i></i></span></li>
-        <li>Flutter / Dart<span class="lv" data-l="1"><i></i><i></i><i></i></span></li>
-      </ul></div>
-      <div><h3>Backend &amp; <span class="fr">données</span><span class="en">data</span></h3><ul class="sk">
-        <li>PHP / Laravel<span class="lv" data-l="3"><i></i><i></i><i></i></span></li>
-        <li>Python<span class="lv" data-l="3"><i></i><i></i><i></i></span></li>
-        <li>MySQL / PostgreSQL / Firebase<span class="lv" data-l="3"><i></i><i></i><i></i></span></li>
-        <li>Node.js<span class="lv" data-l="2"><i></i><i></i><i></i></span></li>
-        <li>Java / C#<span class="lv" data-l="1"><i></i><i></i><i></i></span></li>
-      </ul></div>
-    </div>
-    <div class="tools"><h3><span class="fr">Outils et méthodes</span><span class="en">Tools and methods</span></h3>
-      <ul class="tl">
-        <li>Git &amp; GitHub</li><li>Agile / Scrum</li>
-        <li><span class="fr">Intelligence artificielle</span><span class="en">Artificial intelligence</span></li>
-        <li><span class="fr">Résolution de problèmes</span><span class="en">Problem solving</span></li>
-        <li><span class="fr">Travail d’équipe</span><span class="en">Teamwork</span></li>
-        <li><span class="fr">Adaptabilité et autonomie</span><span class="en">Adaptability and self-motivation</span></li>
-      </ul>
-    </div>
-  </div>
+  <div id="sl"></div>
 </div></section>
 
-<section id="projects"><div class="sec">
+<section id="experience"><div class="sec">
+  <h2><span class="fr">Expérience</span><span class="en">Experience</span></h2>
+  <div id="xl"></div>
+</div></section>
+
+<section id="projects" class="alt"><div class="sec">
   <h2><span class="fr">Projets</span><span class="en">Projects</span></h2>
   <div id="pl"></div>
 </div></section>
 
-<section id="education" class="alt"><div class="sec">
+<section id="education"><div class="sec">
   <h2><span class="fr">Formation</span><span class="en">Education</span></h2>
-  <div>
-    <div class="ed"><time><span class="fr">2025, en cours</span><span class="en">2025, ongoing</span></time><div><h3><span class="fr">Programme DCLIC, développement web et mobile</span><span class="en">DCLIC programme, web and mobile development</span></h3><p>Organisation Internationale de la Francophonie, Aného, Togo</p></div></div>
-    <div class="ed"><time>2024</time><div><h3><span class="fr">Licence en génie logiciel et systèmes d’information</span><span class="en">Bachelor’s in software engineering and information systems</span></h3><p>Institut Africain d’Informatique, Lomé, Togo</p></div></div>
-    <div class="ed"><time>2021</time><div><h3><span class="fr">Baccalauréat scientifique, série D</span><span class="en">Scientific baccalaureate, series D</span></h3><p>Lycée Privé Maratho, Kpémé, Togo</p></div></div>
-  </div>
+  <div id="el"></div>
 </div></section>
 
-<section id="certifications"><div class="sec">
+<section id="certifications" class="alt"><div class="sec">
   <h2>Certifications</h2>
   <div id="cl"></div>
 </div></section>
@@ -305,32 +287,34 @@ $('#bg').onclick=()=>mo.classList.add('open');$('#mx').onclick=()=>mo.classList.
 n.onclick=e=>{if(e.target.closest('a'))mo.classList.remove('open')};
 
 /* projets */
-const T={c:['Client entreprise','Business client'],p:['Projet personnel','Personal project'],g:['Administration','Government'],k:['Client confidentiel','Confidential client']};
-const N={priv:['Accès privé','Private access'],soon:['Application bientôt disponible','App coming soon'],conf:['Projet confidentiel','Confidential project']};
+const T={f:['Fintech','Fintech'],c:['Client entreprise','Business client'],p:['Projet personnel','Personal project'],g:['Administration','Government']};
+const N={priv:['Accès privé','Private access'],soon:['Application bientôt disponible','App coming soon']};
 const P=[
-{n:['Bibliothèque numérique en ligne','Online digital library'],t:'p',s:'PHP, HTML, CSS, JS',img:'projet',url:'https://e-biblio.great-site.net/',
- d:['Projet personnel conçu de A à Z pour maîtriser le cycle complet d’une application web : modélisation de base de données, authentification sécurisée, recherche dynamique et déploiement en production. Architecture MVC sous PHP, gestion des rôles (lecteur, administrateur), recherche par titre et auteur, interface responsive.','End-to-end personal project to master the full web application lifecycle: database modelling, secure authentication, dynamic search and production deployment. PHP MVC architecture, role-based access (reader, admin), title and author search, responsive UI.']},
+{n:'Crypto Squad',t:'f',s:'Plateforme web, PWA, Mobile Money',img:'cryptosquad',w:1,b:['Nouveau','New'],url:'https://test.achatcryptostg.com/',
+ d:['Plateforme fintech pour l’Afrique de l’Ouest réunissant deux services sur un même compte : achat, vente et swap de cryptomonnaies réglés par Mobile Money ou virement, et transferts d’argent internationaux avec taux et frais garantis pendant 10 minutes. Vérification d’identité (KYC), code PIN à chaque transfert, suivi des opérations en temps réel, programme d’affiliation, interface bilingue et application installable (PWA) avec notifications.','West African fintech platform combining two services under one account: buying, selling and swapping cryptocurrencies paid by Mobile Money or bank transfer, and international money transfers with a rate and fees locked for 10 minutes. Identity verification (KYC), a PIN on every transfer, real-time tracking, an affiliate programme, a bilingual interface and an installable app (PWA) with notifications.']},
+{n:['Gestion de station-service','Fuel station management'],t:'c',s:'Laravel, MySQL, JS, Bootstrap',note:'priv',b:['En cours','In progress'],
+ d:['ERP complet pour une société pétrolière au Togo : ventes de carburant, niveaux de stock par cuve, approvisionnements et livraisons, pompes et relevés de compteurs, caisse et facturation (espèces et Mobile Money), boutique annexe et tableau de bord analytique en temps réel. Architecture pensée pour le multi-stations, chaque module validé avant livraison.','Complete ERP for a petroleum company in Togo: fuel sales, stock levels per tank, supplies and deliveries, pumps and meter readings, cash and invoicing (cash and Mobile Money), annex shop and a real-time analytics dashboard. Built for multi-station use, each module validated before delivery.']},
+{n:['Gestion des marchés publics','Public procurement system'],t:'g',s:'Laravel, Node.js, MySQL',img:'projet3',note:'priv',
+ d:['Application métier développée seul pour la Mairie de la Commune du Golfe 4 : dépôt et suivi des appels d’offres, tableau de bord d’évaluation, validation multi-niveaux et traçabilité complète des décisions. Plans de tests fonctionnels rédigés et exécutés. Livrée et opérationnelle, son déploiement attend une décision administrative.','Business application built solo for the Commune du Golfe 4 town hall: tender submission and tracking, evaluation dashboard, multi-level approval and a full decision audit trail. Functional test plans written and executed. Delivered and production-ready, rollout pending an administrative decision.']},
 {n:'Rubix Inov',t:'c',s:'HTML, CSS, JS',img:'projetR',url:'https://www.rubix-inov.com/',
- d:['Conception et développement complet du site vitrine d’une startup togolaise spécialisée dans les carburants premium enrichis en additifs ERC.','Full design and development of the showcase site for a Togolese startup specialising in premium fuels enriched with ERC additives.']},
-{n:'ABZ Technologies',t:'c',s:'HTML, CSS, JS',img:'projet1',url:'https://zlo.abztechnologies.net/fr/',
- d:['Prise en charge technique complète du site d’une entreprise de solutions technologiques : audit du code existant, correction de bugs critiques, optimisation des temps de chargement et stabilité sur mobile. Travail en autonomie, livré directement au client.','Full technical ownership of a tech-solutions company website: codebase audit, critical bug fixes, load-time optimisation and mobile stability. Fully autonomous, delivered directly to the client.']},
-{n:['Portfolio personnel','Personal portfolio'],t:'p',s:'HTML, CSS, JS',url:'https://mrisaac7979.github.io/Isaac-Portfolio/',
- d:['Vitrine professionnelle conçue sans framework, en HTML, CSS et JavaScript vanilla. Interface bilingue FR/EN, responsive et optimisée pour les performances. Ce site en est la démonstration.','Professional showcase built without a framework, in plain HTML, CSS and JavaScript. Bilingual FR/EN, responsive and performance-optimised. This site is the proof.']},
-{n:'HMLA Sarl',t:'c',s:'HTML, CSS, JS',img:'projet2',url:'https://hmlasarl.com/index.html',
- d:['Intervention complète sur le site d’une entreprise maritime et d’avitaillement : correction de failles de sécurité, mise à jour des contenus, correction des formulaires et de la navigation. Mission réalisée seul, sans interruption de service.','Full intervention on a maritime ship-supply company website: security fixes, content updates, form and navigation bug fixes. Delivered solo, with zero downtime.']},
+ d:['Site vitrine d’une startup togolaise de carburants premium enrichis en additifs ERC, conçu et développé de bout en bout : identité visuelle, contenus, interface bilingue avec mode sombre, mise en ligne.','Showcase site for a Togolese startup selling premium fuels enriched with ERC additives, designed and built end to end: visual identity, content, a bilingual interface with dark mode, go-live.']},
 {n:'Global Majestic Trade Sarl',t:'c',s:'HTML, CSS, Bootstrap, JS',img:'projetG',url:'https://global-majestic.com/',
  d:['Mission en solo pour une entreprise togolaise du pétrole, des mines et des lubrifiants : architecture du site, charte graphique, intégration des contenus métier et mise en ligne. L’enjeu : traduire une activité industrielle complexe en une vitrine claire et crédible.','Solo delivery for a Togolese oil, mining and lubricants company: site architecture, visual identity, business content integration and go-live. The challenge: turning a complex industrial activity into a clear, credible showcase.']},
-{n:['Gestion des marchés publics','Public procurement system'],t:'g',s:'Laravel, Node.js, MySQL',img:'projet3',note:'priv',
- d:['Application métier développée seul pour une administration locale afin de digitaliser et sécuriser la passation des marchés publics : dépôt et suivi des appels d’offres, tableau de bord d’évaluation, validation multi-niveaux et traçabilité complète. Livrée et opérationnelle, son déploiement attend une décision administrative.','Business application built solo for a local government to digitise and secure public procurement: tender submission and tracking, evaluation dashboard, multi-level approval and full audit trail. Delivered and production-ready, rollout pending an administrative decision.']},
+{n:'HMLA Sarl',t:'c',s:'HTML, CSS, JS',img:'projet2',url:'https://hmlasarl.com/index.html',
+ d:['Optimisation du site d’une entreprise maritime et d’avitaillement : corrections de sécurité, mise à jour des contenus, fiabilisation des formulaires et de la navigation, puis fonctionnalités back-office alignées sur les besoins métier. Réalisé seul, sans interruption de service.','Optimisation of a maritime and ship-supply company website: security fixes, content updates, more reliable forms and navigation, then back-office features aligned with business needs. Delivered solo, with zero downtime.']},
+{n:'ABZ Technologies',t:'c',s:'HTML, CSS, JS',img:'projet1',url:'https://zlo.abztechnologies.net/fr/',
+ d:['Prise en charge technique du site d’une entreprise de solutions technologiques : audit du code existant, correction des bugs critiques, optimisation des temps de chargement et stabilité sur mobile. Travail autonome, livré directement au client.','Technical ownership of a tech-solutions company website: codebase audit, critical bug fixes, load-time optimisation and mobile stability. Autonomous work, delivered directly to the client.']},
 {n:['Application mobile de chants','Song book mobile app'],t:'c',s:'Flutter, Dart, Firebase',img:'projet4',note:'soon',
- d:['Application cross-platform sous Flutter pour un client qui numérise son répertoire de chants : recherche par titre ou paroles, mode hors ligne via le cache local Firebase, interface épurée pensée pour l’usage en groupe.','Cross-platform Flutter app for a client digitising their song collection: search by title or lyrics, offline mode through Firebase local cache, clean UI designed for group use.']},
-{n:['Gestion de station carburant','Fuel station management'],t:'k',s:'Laravel, MySQL, JS, Bootstrap',note:'conf',b:['En cours','In progress'],
- d:['Logiciel de gestion complet, en cours de développement pour une société pétrolière au Togo : stocks par cuve en temps réel, approvisionnements, caisse et facturation journalière, personnel de station, tableau de bord avec alertes de seuil. Architecture pensée pour le multi-stations. Nom du client confidentiel à sa demande.','Full management software under development for a petroleum company in Togo: real-time stock per tank, supplies, daily cash and invoicing, station staff, dashboard with threshold alerts. Built for multi-station use. Client name withheld at their request.']}
+ d:['Application cross-platform Flutter pour la numérisation d’un répertoire de chants : recherche par titre ou paroles, lecture audio, favoris, partage social et mode hors ligne grâce au cache local Firebase. Architecture applicative et backend conçus pour un usage en groupe.','Cross-platform Flutter app digitising a song collection: search by title or lyrics, audio playback, favourites, social sharing and offline mode through Firebase local cache. Application architecture and backend designed for group use.']},
+{n:['Bibliothèque numérique en ligne','Online digital library'],t:'p',s:'PHP, HTML, CSS, JS',img:'projet',url:'https://e-biblio.great-site.net/',
+ d:['Projet personnel conçu de A à Z pour maîtriser le cycle complet d’une application web : modélisation de la base de données, authentification sécurisée, recherche dynamique et déploiement en production. Architecture MVC sous PHP, gestion des rôles (lecteur, administrateur), recherche par titre et auteur, interface responsive.','End-to-end personal project to master the full web application lifecycle: database modelling, secure authentication, dynamic search and production deployment. PHP MVC architecture, role-based access (reader, admin), title and author search, responsive UI.']},
+{n:['Portfolio personnel','Personal portfolio'],t:'p',s:'HTML, CSS, JS',url:'https://mrisaac7979.github.io/Isaac-Portfolio/',
+ d:['Vitrine professionnelle développée sans framework, en HTML, CSS et JavaScript : bilingue FR/EN, mode clair et sombre, responsive et optimisée pour les performances. Ce site en est la démonstration.','Professional showcase built without a framework, in plain HTML, CSS and JavaScript: bilingual FR/EN, light and dark modes, responsive and performance-optimised. This site is the proof.']}
 ];
 $('#pl').innerHTML=P.map((p,i)=>{
  const nm=typeof p.n==='string'?p.n:L(p.n);
  const note=p.note?`<em>${ic('lock')}${L(N[p.note])}</em>`:'';
- const fig=p.img?`<div class="fig"><img src="images/${p.img}.webp" alt="" loading="lazy">${note}</div>`:(p.note?`<div class="fig">${ic('lock')}${L(N[p.note])}</div>`:'');
+ const fig=p.img?`<div class="fig${p.w?' w':''}"><img src="images/${p.img}.webp" alt="" loading="lazy">${note}</div>`:(p.note?`<div class="fig">${ic('lock')}${L(N[p.note])}</div>`:'');
  const lk=p.url?`<a class="lk" href="${p.url}" target="_blank" rel="noopener">${L(['Visiter le site','Visit the site'])}${ic('ext')}</a>`:'';
  return `<article class="pj${i?'':' open'}"><h3><button class="ph" aria-expanded="${!i}" aria-controls="pb${i}"><span class="pn">${nm}${p.b?`<span class="bd">${L(p.b)}</span>`:''}</span><span class="pt">${L(T[p.t])}</span><span class="ps">${p.s}</span>${ic('plus')}</button></h3><div class="pb" id="pb${i}" role="region"><div class="pbi"><div class="pbc${fig?'':' no'}">${fig}<div><p class="fr">${p.d[0]}</p><p class="en">${p.d[1]}</p>${lk}</div></div></div></div></article>`;
 }).join('');
@@ -341,11 +325,52 @@ $('#pl').onclick=e=>{const b=e.target.closest('.ph');if(!b)return;
 
 /* certifications */
 const C=[
-['certiport',['Formation qualifiante en intelligence artificielle','Qualifying training in artificial intelligence'],'IFIC-AUF / Certiport, 2025','https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=476&cvid=+aHbX28ROhiy1s8uRXGoZw=='],
-['google','Artificial Intelligence','Google, 2025','https://www.coursera.org/account/accomplishments/verify/0549UI4R2MPV'],
+['certiport','Information Technology Specialist','Certiport / AUF, 2025','https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=476&cvid=+aHbX28ROhiy1s8uRXGoZw=='],
+['google','Google AI Essentials','Google / Coursera, 2025','https://www.coursera.org/account/accomplishments/verify/0549UI4R2MPV'],
 ['oracle2','Oracle Cloud Infrastructure Generative AI Professional','Oracle, 2025','https://catalog-education.oracle.com/pls/certview/sharebadge?id=104CB68B6920A836B2FEA7081C6374A6D055C7DA51FEAB70B1938089DE4E616B'],
-['cisco','Cisco NetAcad','Cisco Networking Academy, 2022','https://www.credly.com/badges/d9681bb9-940b-4546-8c68-d82178d5996f']];
+['cisco','Networking & Security','Cisco Networking Academy, 2022','https://www.credly.com/badges/d9681bb9-940b-4546-8c68-d82178d5996f']];
 $('#cl').innerHTML=C.map(c=>`<a class="ct" href="${c[3]}" target="_blank" rel="noopener"><div class="lg"><img src="images/${c[0]}.png" alt="" loading="lazy"></div><div><h3>${typeof c[1]==='string'?c[1]:L(c[1])}</h3><p>${c[2]}</p></div><span class="vf">${L(['Vérifier','Verify'])}${ic('ext')}</span></a>`).join('');
+
+
+/* compétences, expérience, formation */
+const S=[
+[['Frontend','Frontend'],'JavaScript, TypeScript, React.js, Next.js, HTML, CSS, Bootstrap'],
+[['Backend','Backend'],'Node.js, PHP, Laravel, Firebase, Supabase'],
+[['Mobile','Mobile'],'Flutter, Dart'],
+[['Bases de données','Databases'],'MySQL, PostgreSQL'],
+[['Autres langages','Other languages'],'Python, Java, C#'],
+[['Tests et qualité','Testing and quality'],['Tests fonctionnels, d’intégration et de régression, détection et suivi d’anomalies, validation avant déploiement','Functional, integration and regression testing, defect detection and tracking, pre-release validation']],
+[['Outils et méthodes','Tools and methods'],['Git, GitHub, Trello (organisation Kanban)','Git, GitHub, Trello (Kanban workflow)']],
+[['IA et cloud','AI and cloud'],['Oracle Cloud Infrastructure, intelligence artificielle (formation certifiante)','Oracle Cloud Infrastructure, artificial intelligence (certified training)']],
+[['Langues','Languages'],['Français (langue maternelle, DELF B2), anglais (intermédiaire, B1)','French (native, DELF B2), English (intermediate, B1)']],
+[['Qualités','Strengths'],['Rigueur, esprit d’analyse et de synthèse, esprit d’équipe, communication, autodidacte, créativité, adaptabilité','Rigour, analytical and synthesis skills, teamwork, communication, self-taught, creativity, adaptability']]];
+$('#sl').innerHTML=S.map(r=>`<div class="sr"><h3>${L(r[0])}</h3><p>${typeof r[1]==='string'?r[1]:L(r[1])}</p></div>`).join('');
+const X=[
+{d:['Janvier 2026 – Présent','January 2026 – Present'],p:'Lomé, Togo',r:['Développeur fullstack','Fullstack developer'],c:'HEBAT SARLU',b:[
+ ['Conçois et développe de bout en bout un logiciel complet de gestion de station-service : ventes de carburant, cuves et niveaux de stock, approvisionnements et livraisons.','Designing and building, end to end, a complete fuel-station management system: fuel sales, tanks and stock levels, supplies and deliveries.'],
+ ['Module pompes : affectation des pompistes, relevés de compteurs journaliers, calcul automatique des volumes vendus et des écarts.','Pump module: attendant assignment, daily meter readings, automatic calculation of volumes sold and variances.'],
+ ['Caisse et facturation (espèces et Mobile Money), rapports de ventes journaliers et mensuels, stocks de la boutique annexe avec alertes de réapprovisionnement.','Cash and invoicing (cash and Mobile Money), daily and monthly sales reports, annex shop stock with restocking alerts.'],
+ ['Tableau de bord analytique en temps réel : chiffre d’affaires, marges, consommation par cuve.','Real-time analytics dashboard: revenue, margins, consumption per tank.'],
+ ['Modélise la base de données relationnelle, développe l’API backend et intègre le frontend ; valide chaque module avant livraison (calculs, flux de données, cas limites).','Models the relational database, builds the backend API and integrates the frontend; validates every module before delivery (calculations, data flows, edge cases).']]},
+{d:['Décembre 2024 – Mars 2025','December 2024 – March 2025'],p:'Lomé, Togo',r:['Développeur web','Web developer'],c:'HMLA SARL, Hope Maritime & Agency',b:[
+ ['Maintenance et optimisation du site institutionnel de l’entreprise.','Maintenance and optimisation of the company’s corporate website.'],
+ ['Digitalisation des services maritimes pour renforcer l’efficacité opérationnelle.','Digitisation of maritime services to strengthen operational efficiency.'],
+ ['Développement de fonctionnalités back-office adaptées aux besoins métier, en collaboration avec les équipes internes.','Back-office features tailored to business needs, in collaboration with internal teams.']]},
+{d:['Mai 2024 – Août 2024','May 2024 – August 2024'],p:'Lomé, Togo',r:['Développeur web','Web developer'],c:'Mairie Commune Golfe 4',b:[
+ ['Conception et architecture d’un logiciel de gestion de la passation des marchés publics.','Design and architecture of a public procurement management system.'],
+ ['Développement et intégration des fonctionnalités principales, côté frontend et backend.','Development and integration of the core features, frontend and backend.'],
+ ['Rédaction et exécution de plans de tests fonctionnels, identification et correction des anomalies.','Writing and running functional test plans, identifying and fixing defects.']]},
+{d:['Juin 2023 – Août 2023','June 2023 – August 2023'],p:'Lomé, Togo',r:['Développeur web et mobile','Web and mobile developer'],c:'Abz Technologies',b:[
+ ['Maintenance et amélioration du site web de l’entreprise.','Maintenance and improvement of the company website.'],
+ ['Conception de l’architecture applicative et du backend d’une application de livre de chants.','Application architecture and backend design for a song book app.'],
+ ['Intégration de la lecture audio, des favoris et du partage social.','Integration of audio playback, favourites and social sharing.']]}];
+$('#xl').innerHTML=X.map(x=>`<div class="xp"><div><time>${L(x.d)}</time><small>${x.p}</small></div><div><h3>${L(x.r)}</h3><p class="co">${x.c}</p><ul>${x.b.map(b=>`<li>${L(b)}</li>`).join('')}</ul></div></div>`).join('');
+const E=[
+[['Août 2025 – Février 2026','August 2025 – February 2026'],['Formation D-CLIC, développement web et mobile','D-CLIC programme, web and mobile development'],'Organisation Internationale de la Francophonie (OIF)'],
+[['Mars 2025 – Juillet 2025','March 2025 – July 2025'],['Formation certifiante en intelligence artificielle','Certified training in artificial intelligence'],'Polytech Intl / IFIC-AUF'],
+[['2021 – 2024','2021 – 2024'],['Licence professionnelle en génie logiciel et systèmes d’information (GLSI)','Professional bachelor’s in software engineering and information systems (GLSI)'],'IAI-Togo, Lomé'],
+[['2021','2021'],['Baccalauréat scientifique, série D','Scientific baccalaureate, series D'],'Lycée Privé Maratho, Kpémé, Togo']];
+$('#el').innerHTML=E.map(e=>`<div class="ed"><time>${L(e[0])}</time><div><h3>${L(e[1])}</h3><p>${e[2]}</p></div></div>`).join('');
 
 /* navigation active */
 const links=$$('#nav a');
